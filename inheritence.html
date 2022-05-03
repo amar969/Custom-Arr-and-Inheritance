@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritence Model</title>
+</head>
+<body>
+    
+
+
+    <script>
+
+        // basic functionality of cars
+
+        let four_wheel_car = {
+            wheel: 4,
+            sunroof: true,
+            seater: 4,
+            sound_system: false
+        }
+
+        let suv = Object.create(four_wheel_car)
+        suv.fuel = "Petrol";
+        suv.color = "black";
+        suv.dashboard_customize = true;
+        console.log(suv);
+
+        let nano = Object.create(four_wheel_car)
+        nano.fuel = "Diesel";
+        nano.color = "white";
+        console.log(nano)
+
+    </script>
+
+</body>
+</html>

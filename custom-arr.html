@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom Array</title>
+  </head>
+  <body>
+    <script>
+      function myArray() {
+        Object.defineProperty(this, "length", {
+          enumerable: false,
+          writable: true,
+        });
+
+        for (let i = 0; i < arguments.length; i++) {
+          this[i] = arguments[i];
+          this.length = arguments.length;
+        }
+      }
+
+      let a2 = new myArray(201, 202, 203, 204, 205);
+      console.log(a2);
+
+      // push
+      myArray.prototype.push = function (ele) {
+        let index = this.length;
+        this[index] = ele;
+      };
+
+      //pop
+      myArray.prototype.pop = function (ele) {
+        let index = this.length - 1;
+        let poppedElem = this[index];
+        delete this[index];
+        this.length--;
+        return poppedElem;
+      };
+
+      // top
+      myArray.prototype.top = function (ele) {
+        let index = this.length - 1;
+        return this[index];
+      };
+
+      //print
+      myArray.prototype.print = function (ele) {
+        let length = this.length
+        return length
+      };
+
+      a2.push(206);
+      console.log(a2);
+      console.log(a2.top());
+      console.log(a2.print());
+    </script>
+  </body>
+</html>
