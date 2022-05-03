@@ -27,6 +27,7 @@
       myArray.prototype.push = function (ele) {
         let index = this.length;
         this[index] = ele;
+        this.length++
       };
 
       //pop
@@ -44,16 +45,18 @@
         return this[index];
       };
 
-      //print
-      myArray.prototype.print = function (ele) {
+      //size
+      myArray.prototype.size = function (ele) {
         let length = this.length
         return length
       };
 
       a2.push(206);
       console.log(a2);
+      a2.push(208);
+      console.log(a2)
       console.log(a2.top());
-      console.log(a2.print());
+      console.log(a2.size());
     </script>
   </body>
 </html>
